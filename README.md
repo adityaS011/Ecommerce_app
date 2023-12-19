@@ -3,7 +3,7 @@
 
 ##Welcome to my Ecommerce.
 
-![Website Image](https://ibb.co/C2qr0h3)
+![Website Image]((https://github.com/adityaS011/Ecommerce_app/blob/main/ss/ecom_ss.png))
 <br/>
 ![Website Image 2]([URL](https://drive.google.com/file/d/16t3RootfjggZdPgJpuEXYCmhYRKUGf_A/view?usp=sharing)))
 ## Features
