@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Footer, Navbar } from '../components';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import{toast} from 'react-toastify';
 
 
 const Register = () => {

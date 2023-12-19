@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Link, useParams } from "react-router-dom";
 import Marquee from "react-fast-marquee";
@@ -20,23 +20,43 @@ const Product = () => {
     dispatch(addCart(product));
   };
 
+  // useRef to persist the variable across renders
+  const componentMounted = useRef(true);
+
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
       setLoading2(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-      const data = await response.json();
-      setProduct(data);
-      setLoading(false);
-      const response2 = await fetch(
-        `https://fakestoreapi.com/products/category/${data.category}`
-      );
-      const data2 = await response2.json();
-      setSimilarProducts(data2);
-      setLoading2(false);
+
+      try {
+        // Check if the component is still mounted before setting state
+        if (componentMounted.current) {
+          const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+          const data = await response.json();
+          setProduct((prevProduct) => ({ ...prevProduct, ...data }));
+          setLoading(false);
+        }
+
+        if (componentMounted.current) {
+          const response2 = await fetch(
+            `https://fakestoreapi.com/products/category/${product.category}`
+          );
+          const data2 = await response2.json();
+          setSimilarProducts(data2);
+          setLoading2(false);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
+
     getProduct();
-  }, [id]);
+
+    // Cleanup function to update componentMounted after unmounting
+    return () => {
+      componentMounted.current = false;
+    };
+  }, [id, product.category]);
 
   const Loading = () => {
     return (

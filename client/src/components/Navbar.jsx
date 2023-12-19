@@ -1,8 +1,6 @@
 import React from 'react'
-import { NavLink, useLocation, useNavigation } from 'react-router-dom'
+import { NavLink, useLocation} from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { useState } from 'react'
-
 const Navbar = () => {
     const location = useLocation();
     const state = useSelector(state => state.handleCart);
