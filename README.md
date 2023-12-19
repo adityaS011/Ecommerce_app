@@ -35,6 +35,8 @@ Welcome to React Ecommerce.
 
 2. **npm install**
 
-2. **npm run dev**
+2. **cd client & npm install**
+
+4. **npm run dev**
 
    
