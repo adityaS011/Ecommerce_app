@@ -2,7 +2,8 @@
 #Linux repo: https://github.com/adityaS011/Linux-commands
 
 ##Welcome to my Ecommerce.
-![Website Image]([URL](https://drive.google.com/file/d/16AESwjupMVUwpnQmUrOVecOTFy1-h4yL/view?usp=drive_link))
+![Website Image]([[https://ibb.co/C2qr0h3](https://ibb.co/C2qr0h3)))
+<br/>
 ![Website Image 2]([URL](https://drive.google.com/file/d/16t3RootfjggZdPgJpuEXYCmhYRKUGf_A/view?usp=sharing)))
 ## Features
 
