@@ -29,7 +29,7 @@ const Product = () => {
       setLoading2(true);
 
       try {
-        // Check if the component is still mounted before setting state
+        
         if (componentMounted.current) {
           const response = await fetch(`https://fakestoreapi.com/products/${id}`);
           const data = await response.json();
