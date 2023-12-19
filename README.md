@@ -1,11 +1,10 @@
 # Lucknow ka Ecommerce
 #Linux repo: https://github.com/adityaS011/Linux-commands
 
-##Welcome to my Ecommerce.
+Welcome to my Ecommerce.
 
-![Website Image]((./ss/ecom_ss.png))
-<br/>
-![Website Image 2]([URL](https://drive.google.com/file/d/16t3RootfjggZdPgJpuEXYCmhYRKUGf_A/view?usp=sharing)))
+![Project Screenshot](https://github.com/adityaS011/Ecommerce_app/blob/main/ss/ecom_ss.png)
+
 ## Features
 
 - **User Authentication:** Secure user accounts with authentication.
