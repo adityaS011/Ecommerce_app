@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
+import colors from "colors";
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI);
+    const conn = await mongoose.connect("mongodb+srv://AdityaBlogApp:atlas@cluster0.jo0hwnf.mongodb.net/?retryWrites=true&w=majority");
     console.log(
       `Conneted To Mongodb Databse ${conn.connection.host}`.bgMagenta.white
     );

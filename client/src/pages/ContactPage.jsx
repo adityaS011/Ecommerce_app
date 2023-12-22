@@ -1,12 +1,16 @@
-import React from "react";
-import { Footer, Navbar } from "../components";
+
+import React, { useState } from 'react';
+import { Footer, Navbar } from '../components';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const ContactPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [fullname, setFullname] = useState(''); // Add fullname state
   const [phone, setPhone] = useState(''); // Add phone state
-
+  const navigate = useNavigate();
   const handleSubmit= async(e)=> {
+   
           e.preventDefault();
           try {
             const res = await axios.post('/api/v1/auth/register', {

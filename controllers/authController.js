@@ -1,11 +1,10 @@
-import userModel from "../model/userModel.js";
-import { comparePassword, hashPassword } from "../helpers/authHelper.js";
+import userModel from "../models/userModel.js";
+import { comparePassword, hashPassword } from "./../helpers/authHelper.js";
 import JWT from "jsonwebtoken";
 
 export const registerController = async (req, res) => {
   try {
     const { name, email, password, phone, address } = req.body;
-    //validations
     if (!name) {
       return res.send({ error: "Name is Required" });
     }
@@ -17,6 +16,9 @@ export const registerController = async (req, res) => {
     }
     if (!phone) {
       return res.send({ message: "Phone no is Required" });
+    }
+    if (!address) {
+      return res.send({ message: "Address is Required" });
     }
     //check user
     const exisitingUser = await userModel.findOne({ email });
@@ -34,6 +36,7 @@ export const registerController = async (req, res) => {
       name,
       email,
       phone,
+      address,
       password: hashedPassword,
     }).save();
 
@@ -52,7 +55,6 @@ export const registerController = async (req, res) => {
   }
 };
 
-//POST LOGIN
 export const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -78,7 +80,6 @@ export const loginController = async (req, res) => {
         message: "Invalid Password",
       });
     }
-    //token
     const token = await JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
@@ -89,7 +90,8 @@ export const loginController = async (req, res) => {
         _id: user._id,
         name: user.name,
         email: user.email,
-        phone: user.phone
+        phone: user.phone,
+        adddress: user.address,
       },
       token,
     });
@@ -103,7 +105,6 @@ export const loginController = async (req, res) => {
   }
 };
 
-//test controller
 export const testController = (req, res) => {
   try {
     res.send("Protected Routes");

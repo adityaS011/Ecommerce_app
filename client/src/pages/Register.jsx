@@ -15,7 +15,7 @@ const Register = () => {
   const handleSubmit= async(e)=> {
           e.preventDefault();
           try {
-            const res = await axios.post('/api/v1/auth/register', {
+            const res = await axios.post('/api/v1/register', {
               fullname,
               email,
               password,
@@ -23,7 +23,7 @@ const Register = () => {
             });
             if (res && res.data.success) {
               alert(res.data && res.data.message);
-              navigate("/login");
+              navigate("/");
             } else {
               alert(res.data.message);
             }

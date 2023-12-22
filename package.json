@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce",
+  "name": "Ecommerce-app-2023",
   "version": "1.0.0",
   "description": "ecommerce rest api",
   "main": "server.js",
@@ -7,14 +7,13 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix ./client",
+    "client":"npm start --prefix ./client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "Techinfoyt",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.6.2",
     "bcrypt": "^5.1.0",
     "colors": "^1.4.0",
     "concurrently": "^7.6.0",
