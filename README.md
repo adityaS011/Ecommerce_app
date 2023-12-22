@@ -1,6 +1,10 @@
-# Your eCommerce App Name
+# Lucknow ka Ecommerce
+# Linux repo: https://github.com/adityaS011/Linux-commands
 
-Welcome to React Ecommerce.
+## Welcome to my Ecommerce.
+
+![Project Screenshot](https://github.com/adityaS011/Ecommerce_app/blob/main/ss/ecom_ss.png)
+![Project Screenshot](https://github.com/adityaS011/Ecommerce_app/blob/main/ss/ss2.png)
 
 ## Features
 
